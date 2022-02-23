@@ -4,11 +4,11 @@ import EspArea from "./EspArea/EspArea";
 import Filter from "./Filter/Filter";
 
 export default function ObjAndAreas(params) {
-    const [seccion, setSeccion] = useState("")
-    const [religiones, setReligiones] = useState([])
+    const [seccion, setSeccion] = useState("");
+    const [religiones, setReligiones] = useState([]);
 
     useEffect(() => {
-    }, [])
+    }, []);
 
 
     return(
