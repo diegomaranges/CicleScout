@@ -1,0 +1,11 @@
+.table td, 
+.table th {
+    white-space: wrap;
+    width: 0.3%;
+}
+
+.table td.fit, 
+.table th.fit {
+    white-space: wrap;
+    width: 1%;
+}

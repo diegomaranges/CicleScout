@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import BaseAreas from "./BaseAreas/BaseAreas";
 import EspArea from "./EspArea/EspArea";
 import Filter from "./Filter/Filter";
@@ -17,11 +17,6 @@ export default function ObjAndAreas(params) {
             setReligiones(religiones.filter(item => item !== index));
         }
     }
-
-    useEffect(() => {
-        console.log(religiones);
-    }, [religiones])
-    
 
     return(
         <>
