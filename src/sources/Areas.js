@@ -1,9 +1,9 @@
 export const areas = {
     "AreaDeCrecimiento": [
-        "Corporalidad",
-        "Creatividad",
         "Afectividad",
         "Caracter",
+        "Corporalidad",
+        "Creatividad",
         "Sociabilidad",
         "Espiritualidad"
     ]
