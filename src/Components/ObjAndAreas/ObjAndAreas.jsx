@@ -7,13 +7,25 @@ export default function ObjAndAreas(params) {
     const [seccion, setSeccion] = useState("");
     const [religiones, setReligiones] = useState([]);
 
-    useEffect(() => {
-    }, []);
+    
+    const saveReligions = index => {
+        let i = religiones.indexOf(index);
 
+        if (i < 0) {
+            setReligiones(religiones.concat(index));
+        } else {
+            setReligiones(religiones.filter(item => item !== index));
+        }
+    }
+
+    useEffect(() => {
+        console.log(religiones);
+    }, [religiones])
+    
 
     return(
         <>
-            <Filter sec={setSeccion} rel={setReligiones} ></Filter>
+            <Filter sec={setSeccion} sRel={saveReligions}></Filter>
             <BaseAreas sec={seccion}></BaseAreas>
             <EspArea sec={seccion} rel={religiones}></EspArea>
         </>

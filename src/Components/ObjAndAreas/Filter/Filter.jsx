@@ -18,7 +18,7 @@ export default function Filter(params) {
             {rel.Religiones.map((elem, index) => {
                 return(
                     <section key={elem + "0"} className="form-check form-switch ms-4">
-                        <input key={elem + "1"} className="form-check-input" type="checkbox" role="switch" id={"switch" + index} />
+                        <input onChange={() => params.sRel(index)} key={elem + "1"} className="form-check-input" type="checkbox" role="switch" id={"switch" + index} />
                         <label key={elem + "2"} className="form-check-label" htmlFor={"switch" + index}>{elem}</label>
                     </section>
                 )
