@@ -72,9 +72,9 @@ export default function BaseAreas(params) {
         const loadAreasRow = () => {
             return(
                 <tr>
-                    <th scope="col">#</th>
+                    <th scope="col" className="text-center">#</th>
                     {allAreas.map((area, i) => {
-                        return <th className="fit" key={"area" + i} scope="col">{area}</th>
+                        return <th className="fit text-center" key={"area" + i} scope="col">{area}</th>
                     })}
                 </tr>
             )
@@ -87,12 +87,12 @@ export default function BaseAreas(params) {
                 <>
                     {total.map(e => {
                             return <tr key={"tr" + e}>
-                                <th key={"number" + (e+1)} scope="row">{e + 1}</th>
-                                <th className="fit" key={"afect" + e}>{afect[e]}</th>
-                                <th className="fit" key={"carac" + e}>{carac[e]}</th>
-                                <th className="fit" key={"corpo" + e}>{corpo[e]}</th>
-                                <th className="fit" key={"creat" + e}>{creat[e]}</th>
-                                <th className="fit" key={"socia" + e}>{socia[e]}</th>
+                                <th key={"number" + (e+1)} scope="row" className="text-center">{e + 1}</th>
+                                <th className="fit text-center" key={"afect" + e}>{afect[e]}</th>
+                                <th className="fit text-center" key={"carac" + e}>{carac[e]}</th>
+                                <th className="fit text-center" key={"corpo" + e}>{corpo[e]}</th>
+                                <th className="fit text-center" key={"creat" + e}>{creat[e]}</th>
+                                <th className="fit text-center" key={"socia" + e}>{socia[e]}</th>
                             </tr>
                     })}
                 </>

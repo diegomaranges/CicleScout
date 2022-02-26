@@ -7,9 +7,9 @@ export default function EspArea(params) {
     const loadUBu = () => {
         return (
             <>
-                <th scope="row">Budistas</th>
+                <th scope="row" className="text-center">Budistas</th>
                 {espiritualidadU.espUBudista.Budistas.map((e, i) => {
-                    return <th className="fit" key={"uBu" + i}>{e}</th>
+                    return <th className="fit text-center" key={"uBu" + i}>{e}</th>
                 })}
             </>
         )
@@ -18,9 +18,9 @@ export default function EspArea(params) {
     const loadUCa = () => {
         return (
             <>
-                <th scope="row">Católicos</th>
+                <th scope="row" className="text-center">Católicos</th>
                 {espiritualidadU.espUCatolico.Catolicos.map((e, i) => {
-                    return <th className="fit" key={"uCa" + i}>{e}</th>
+                    return <th className="fit text-center" key={"uCa" + i}>{e}</th>
                 })}
             </>
         )
@@ -29,9 +29,9 @@ export default function EspArea(params) {
     const loadUCE = () => {
         return (
             <>
-                <th scope="row">Cristianos Evangélicos</th>
+                <th scope="row" className="text-center">Cristianos Evangélicos</th>
                 {espiritualidadU.espUCrisEvan.CristianosEvangelicos.map((e, i) => {
-                    return <th className="fit" key={"uCE" + i}>{e}</th>
+                    return <th className="fit text-center" key={"uCE" + i}>{e}</th>
                 })}
             </>
         )
@@ -40,9 +40,9 @@ export default function EspArea(params) {
     const loadUJu = () => {
         return (
             <>
-                <th scope="row">Judíos</th>
+                <th scope="row" className="text-center">Judíos</th>
                 {espiritualidadU.espUJudios.Judios.map((e, i) => {
-                    return <th className="fit" key={"uJu" + i}>{e}</th>
+                    return <th className="fit text-center" key={"uJu" + i}>{e}</th>
                 })}
             </>
         )
@@ -51,9 +51,9 @@ export default function EspArea(params) {
     const loadUSa = () => {
         return (
             <>
-                <th scope="row">Santos de los Últimos Días</th>
+                <th scope="row" className="text-center">Santos de los Últimos Días</th>
                 {espiritualidadU.espUSanUDias.SantosDeLosUltimosDias.map((e, i) => {
-                    return <th className="fit" key={"uSa" + i}>{e}</th>
+                    return <th className="fit text-center" key={"uSa" + i}>{e}</th>
                 })}
             </>
         )
@@ -62,9 +62,9 @@ export default function EspArea(params) {
     const loadUMu = () => {
         return (
             <>
-                <th scope="row">Musulmanes</th>
+                <th scope="row" className="text-center">Musulmanes</th>
                 {espiritualidadU.espUMus.Musulmanes.map((e, i) => {
-                    return <th className="fit" key={"uMu" + i}>{e}</th>
+                    return <th className="fit text-center" key={"uMu" + i}>{e}</th>
                 })}
             </>
         )
