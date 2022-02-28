@@ -9,3 +9,13 @@
     white-space: wrap;
     width: 1%;
 }
+
+button {
+    background: none;
+    border: none;
+    font-weight: bold;
+}
+
+.check {
+    color: rgb(16, 57, 95);
+}

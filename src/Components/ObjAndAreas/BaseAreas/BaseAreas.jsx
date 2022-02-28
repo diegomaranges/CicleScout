@@ -10,6 +10,10 @@ import * as areas from "../../../sources/Areas";
 import "./BaseAreas.css";
 
 export default function BaseAreas(params) {
+    function hundleObjClick(area, index) {
+        let variable = reactDom.findDOMNode(document.getElementById(area + index));
+        variable.classList.toggle("check");
+    }
 
     useEffect(() => {
         let allAreas = [];
@@ -85,14 +89,14 @@ export default function BaseAreas(params) {
             total = [...Array(length).keys()]
             return (
                 <>
-                    {total.map(e => {
+                    {total.map(e=> {
                             return <tr key={"tr" + e}>
                                 <th key={"number" + (e+1)} scope="row" className="text-center">{e + 1}</th>
-                                <th className="fit text-center" key={"afect" + e}>{afect[e]}</th>
-                                <th className="fit text-center" key={"carac" + e}>{carac[e]}</th>
-                                <th className="fit text-center" key={"corpo" + e}>{corpo[e]}</th>
-                                <th className="fit text-center" key={"creat" + e}>{creat[e]}</th>
-                                <th className="fit text-center" key={"socia" + e}>{socia[e]}</th>
+                                <th className="fit text-center" key={"afect" + e}><button id={"afect" + e} onClick={() => hundleObjClick("afect", e)}>{afect[e]}</button></th>
+                                <th className="fit text-center" key={"carac" + e}><button id={"carac" + e} onClick={() => hundleObjClick("carac", e)}>{carac[e]}</button></th>
+                                <th className="fit text-center" key={"corpo" + e}><button id={"corpo" + e} onClick={() => hundleObjClick("corpo", e)}>{corpo[e]}</button></th>
+                                <th className="fit text-center" key={"creat" + e}><button id={"creat" + e} onClick={() => hundleObjClick("creat", e)}>{creat[e]}</button></th>
+                                <th className="fit text-center" key={"socia" + e}><button id={"socia" + e} onClick={() => hundleObjClick("socia", e)}>{socia[e]}</button></th>
                             </tr>
                     })}
                 </>
