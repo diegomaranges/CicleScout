@@ -1,6 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-export default function Activities(params) {
+export default function Activities(prop) {
+    let navigate = useNavigate();
+
+    function SelecObjs(prop) {
+        navigate("/objetives");
+    }
+
     return(
         <>
             <form>
@@ -12,7 +19,7 @@ export default function Activities(params) {
                     <span className="input-group-text" id="basic-addon1">Objetivos</span>
                     <input type="text" className="form-control" placeholder="Nombre de actividad" aria-label="Username" aria-describedby="basic-addon1"/>
                 </div>
-                <button className="btn btn-primary mb-3">Seleccionar objetivos educativos</button>
+                <button onClick={() => SelecObjs()} className="btn btn-primary mb-3">Seleccionar objetivos educativos</button>
                 <div className="input-group mb-3">
                     <span className="input-group-text">Introduccion</span>
                     <textarea className="form-control" aria-label="With textarea"></textarea>
@@ -29,7 +36,7 @@ export default function Activities(params) {
                     <span className="input-group-text">Introduccion</span>
                     <textarea className="form-control" aria-label="With textarea"></textarea>
                 </div>
-                <label for="basic-url" className="form-label">Recupero</label>
+                <label htmlFor="basic-url" className="form-label">Recupero</label>
                 <div className="input-group mb-3">
                     <span className="input-group-text">Reflexion</span>
                     <textarea className="form-control" aria-label="With textarea"></textarea>
