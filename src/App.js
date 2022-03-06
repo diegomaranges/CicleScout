@@ -5,6 +5,10 @@ import Header from './Components/Header/Header';
 import Activities from "./Components/Activities/Activities";
 
 function App() {
+    /*console.log = console.warn = console.error = () => {};
+
+    // Look ma, no error!
+    console.error('Something bad happened.');*/
     return (
         <BrowserRouter>
             <div className="container">

@@ -2,14 +2,10 @@ import React, {useEffect} from "react";
 import reactDom from "react-dom";
 import { useDispatch } from 'react-redux';
 
-import * as afectividadU from "../../../sources/Unidad/AfectividadUnidad";
-import * as caracterU from "../../../sources/Unidad/CaracterUnidad";
-import * as corporalidadU from "../../../sources/Unidad/CorporalidadUnidad";
-import * as creatividadU from "../../../sources/Unidad/CreatividadUnidad";
-import * as sociabilidadU from "../../../sources/Unidad/SociabilidadUnidad";
-import * as areas from "../../../sources/Areas";
-import "./BaseAreas.css";
 import {addElem, cleanElems, deleteElem} from "../../../actions";
+import { afectividadU, caracterU, corporalidadU, creatividadU, sociabilidadU, areasC } from "../../../Backend/Backend";
+
+import "./BaseAreas.css";
 
 export default function BaseAreas(params) {
     const dispatch = useDispatch();
@@ -44,41 +40,29 @@ export default function BaseAreas(params) {
 
         const LoadSections = () => {
             if (params.sec === "1") {} else if (params.sec === "2") {
-                areas
-                    .areas
-                    .AreaDeCrecimiento
+                areasC
                     .forEach((area, i) => {
                         if (i !== 5) {
                             allAreas.push(area);
                         }
                     })
                 afectividadU
-                    .afecU
-                    .Afectividad
                     .forEach(obj => {
                         afect.push(obj);
                     });
                 caracterU
-                    .carU
-                    .Caracter
                     .forEach(obj => {
                         carac.push(obj);
                     });
                 corporalidadU
-                    .corpU
-                    .Corporalidad
                     .forEach(obj => {
                         corpo.push(obj);
                     });
                 creatividadU
-                    .creatU
-                    .Creatividad
                     .forEach(obj => {
                         creat.push(obj);
                     });
                 sociabilidadU
-                    .socU
-                    .Sociabilidad
                     .forEach(obj => {
                         socia.push(obj);
                     });
@@ -128,13 +112,11 @@ export default function BaseAreas(params) {
             let total = [];
             total = [...Array(length).keys()]
             return (
-                <> {
+                <>
+                {
                     total.map(e => {
                         return <tr key={"tr" + e}>
-                            <th
-                                key={"number" + (
-                                    e + 1
-                                )}
+                            <th key={"number" + (e + 1)}
                                 scope="row"
                                 className="text-center">{e + 1}</th>
                             <th className="fit text-center" key={"afect" + e}>
@@ -165,10 +147,11 @@ export default function BaseAreas(params) {
                     <table className="table table-success table-striped">
                         <thead>
                             {loadAreasRow()}
-                        </thead > <tbody>
-                        {loadDocRows()}
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            {loadDocRows()}
+                        </tbody>
+                    </table>
                 )
             } else {
                 return <div></div>

@@ -48,7 +48,7 @@ export const obj = {
                 "Mis padres y mis dirigentes saben de la existencia de la Sangha de Scouts de Argentina (Comunidad Religiosa Budista dentro de Scouts de Argentina) y tienen contacto fluido con ellos. Aprendí a utilizar el Rosario Budista. Relate los Cinco Preceptos en mi vida diaria. Participe en un grupo de debate entre budistas sobre los Principios Budistas. Conozco la Carta de la Sangha de Scouts de Argentina (Comunidad Religiosa Budista dentro de Scouts de Argentina).",
                 "Manifiesto respeto por las distintas expresiones religiosas de otros Hermanos Scouts. Permito que los Hermanos Scouts de otras expresiones religiosas puedan vivir y compartir su forma de expresar su Fe conformes a las pautas y practicas de su propia religión."
             ],
-            "Catoicos": [
+            "Catolicos": [
                 "Católicos",
                 "Respeto la obra creadora de Dios Padre, y lo expreso en mis actividades en las excursiones y campamentos.",
                 "Participo regularmente en la vida religiosa de mi parroquia (Misa dominical, Fiestas Patronales, peregrinaciones, jornadas de oración, etc…) Participo frecuentemente del Sacramento de la Reconciliación, como ayuda para cumplir con mi Promesa y superar las dificultades para vivir el misterio de la Gracia de Dios.",

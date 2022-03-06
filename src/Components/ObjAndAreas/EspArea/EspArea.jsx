@@ -1,15 +1,14 @@
 import React, { useEffect } from "react";
 import "./EspArea.css";
-import * as espiritualidadU from "../../../sources/Unidad/EspiritualidadUnidad";
+import { espiritualidadU } from "../../../Backend/Backend";
 import reactDom from "react-dom";
 
 export default function EspArea(params) {
     const loadUBu = () => {
         return (
             <>
-                <th scope="row" className="text-center">Budistas</th>
-                {espiritualidadU.espUBudista.Budistas.map((e, i) => {
-                    return <th className="fit text-center" key={"uBu" + i}>{e}</th>
+                {espiritualidadU.Budistas.map((e, i) => {
+                    return i > 0 ? (<th className="fit text-center" key={"uBu" + i}>{e}</th>) : (<th scope="row" className="text-center" key={"uBu" + i}>{espiritualidadU.Budistas[0]}</th>)
                 })}
             </>
         )
@@ -18,9 +17,8 @@ export default function EspArea(params) {
     const loadUCa = () => {
         return (
             <>
-                <th scope="row" className="text-center">Católicos</th>
-                {espiritualidadU.espUCatolico.Catolicos.map((e, i) => {
-                    return <th className="fit text-center" key={"uCa" + i}>{e}</th>
+                {espiritualidadU.Catolicos.map((e, i) => {
+                    return i > 0 ? (<th className="fit text-center" key={"uCa" + i}>{e}</th>) : (<th scope="row" className="text-center" key={"uCa" + i}>{espiritualidadU.Catolicos[0]}</th>)
                 })}
             </>
         )
@@ -29,9 +27,8 @@ export default function EspArea(params) {
     const loadUCE = () => {
         return (
             <>
-                <th scope="row" className="text-center">Cristianos Evangélicos</th>
-                {espiritualidadU.espUCrisEvan.CristianosEvangelicos.map((e, i) => {
-                    return <th className="fit text-center" key={"uCE" + i}>{e}</th>
+                {espiritualidadU.CristianosEvangelicos.map((e, i) => {
+                    return i > 0 ? (<th className="fit text-center" key={"uCE" + i}>{e}</th>) : (<th scope="row" className="text-center" key={"uCE" + i}>{espiritualidadU.CristianosEvangelicos[0]}</th>)
                 })}
             </>
         )
@@ -40,9 +37,8 @@ export default function EspArea(params) {
     const loadUJu = () => {
         return (
             <>
-                <th scope="row" className="text-center">Judíos</th>
-                {espiritualidadU.espUJudios.Judios.map((e, i) => {
-                    return <th className="fit text-center" key={"uJu" + i}>{e}</th>
+                {espiritualidadU.Judios.map((e, i) => {
+                    return i > 0 ? (<th className="fit text-center" key={"uJu" + i}>{e}</th>) : (<th scope="row" className="text-center" key={"uJu" + i}>{espiritualidadU.Judios[0]}</th>)
                 })}
             </>
         )
@@ -51,9 +47,8 @@ export default function EspArea(params) {
     const loadUSa = () => {
         return (
             <>
-                <th scope="row" className="text-center">Santos de los Últimos Días</th>
-                {espiritualidadU.espUSanUDias.SantosDeLosUltimosDias.map((e, i) => {
-                    return <th className="fit text-center" key={"uSa" + i}>{e}</th>
+                {espiritualidadU.SantosDeLosUltimosDias.map((e, i) => {
+                    return i > 0 ? (<th className="fit text-center" key={"uSa" + i}>{e}</th>) : (<th scope="row" className="text-center" key={"uSa" + i}>{espiritualidadU.SantosDeLosUltimosDias[0]}</th>)
                 })}
             </>
         )
@@ -62,9 +57,8 @@ export default function EspArea(params) {
     const loadUMu = () => {
         return (
             <>
-                <th scope="row" className="text-center">Musulmanes</th>
-                {espiritualidadU.espUMus.Musulmanes.map((e, i) => {
-                    return <th className="fit text-center" key={"uMu" + i}>{e}</th>
+                {espiritualidadU.Musulmanes.map((e, i) => {
+                    return i > 0 ? (<th className="fit text-center" key={"uMu" + i}>{e}</th>) : (<th scope="row" className="text-center" key={"uMu" + i}>{espiritualidadU.Musulmanes[0]}</th>)
                 })}
             </>
         )
@@ -92,7 +86,6 @@ export default function EspArea(params) {
 
         } else if (params.sec === "2") {
             especialidades.map(e => {
-                console.log("element = " + e);
                 switch (e) {
                     case 0:
                         uBu.classList.remove("d-none");
@@ -128,44 +121,32 @@ export default function EspArea(params) {
         <>
             <table className="table table-success table-striped">
                 <tbody>
-                    <tr id="UBu" className="d-none">
-                        {loadUBu()}
-                    </tr>
+                    <tr id="UBu" className="d-none">{loadUBu()}</tr>
                 </tbody>
             </table>
             <table className="table table-success table-striped">
                 <tbody>
-                    <tr id="UCE" className="d-none">
-                        {loadUCE()}
-                    </tr>
+                    <tr id="UCE" className="d-none">{loadUCE()}</tr>
                 </tbody>
             </table>
             <table className="table table-success table-striped">
                 <tbody>
-                    <tr id="UCa" className="d-none">
-                        {loadUCa()}
-                    </tr>
+                    <tr id="UCa" className="d-none">{loadUCa()}</tr>
                 </tbody>
             </table>
             <table className="table table-success table-striped">
                 <tbody>
-                    <tr id="UJu" className="d-none">
-                        {loadUJu()}
-                    </tr>
+                    <tr id="UJu" className="d-none">{loadUJu()}</tr>
                 </tbody>
             </table>
             <table className="table table-success table-striped">
                 <tbody>
-                    <tr id="USa" className="d-none">
-                        {loadUSa()}
-                    </tr>
+                    <tr id="USa" className="d-none">{loadUSa()}</tr>
                 </tbody>
             </table>
             <table className="table table-success table-striped">
                 <tbody>
-                    <tr id="UMu" className="d-none">
-                        {loadUMu()}
-                    </tr>
+                    <tr id="UMu" className="d-none">{loadUMu()}</tr>
                 </tbody>
             </table>
         </>
