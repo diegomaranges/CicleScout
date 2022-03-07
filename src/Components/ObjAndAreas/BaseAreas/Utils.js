@@ -1,64 +1,122 @@
-import { afectividadU, caracterU, corporalidadU, creatividadU, sociabilidadU, areasC } from "../../../Backend/Backend";
+import { afectividadU, caracterU, corporalidadU, creatividadU, sociabilidadU, areasC, afectividadM, afectividadC, afectividadR, caracterM, caracterC, caracterR, corporalidadM, corporalidadC, corporalidadR, creatividadM, creatividadC, creatividadR, sociabilidadM, sociabilidadC, sociabilidadR } from "../../../Backend/Backend";
 
 const LoadAreas = (param) => {
     let allAreas = [];
-    if (param === "1") {} else if (param === "2") {
-        areasC.forEach((area, i) => {
-            if (i !== 5) {
-                allAreas.push(area);
-            }
-        })
-    } else if (param === "3") {} else if (param === "4") {} else {}
+    areasC.forEach((area, i) => {
+        if (i !== 5) {
+            allAreas.push(area);
+        }
+    })
     return allAreas;
 }
 
 const LoadAfect = (param) => {
     let afect = [];
-    if (param === "1") {} else if (param === "2") {
+    if (param === "1") {
+        afectividadM.forEach(obj => {
+            afect.push(obj);
+        });
+    } else if (param === "2") {
         afectividadU.forEach(obj => {
             afect.push(obj);
         });
-    } else if (param === "3") {} else if (param === "4") {} else {}
+    } else if (param === "3") {
+        afectividadC.forEach(obj => {
+            afect.push(obj);
+        });
+    } else if (param === "4") {
+        afectividadR.forEach(obj => {
+            afect.push(obj);
+        });
+    }
     return afect;
 }
 
 const LoadCarc = (param) => {
     let carac = [];
-    if (param === "1") {} else if (param === "2") {
+    if (param === "1") {
+        caracterM.forEach(obj => {
+            carac.push(obj);
+        });
+    } else if (param === "2") {
         caracterU.forEach(obj => {
             carac.push(obj);
         });
-    } else if (param === "3") {} else if (param === "4") {} else {}
+    } else if (param === "3") {
+        caracterC.forEach(obj => {
+            carac.push(obj);
+        });
+    } else if (param === "4") {
+        caracterR.forEach(obj => {
+            carac.push(obj);
+        });
+    }
     return carac;
 }
 
 const LoadCorp = (param) => {
     let corpo = [];
-    if (param === "1") {} else if (param === "2") {
+    if (param === "1") {
+        corporalidadM.forEach(obj => {
+            corpo.push(obj);
+        });
+    } else if (param === "2") {
         corporalidadU.forEach(obj => {
             corpo.push(obj);
         });
-    } else if (param === "3") {} else if (param === "4") {} else {}
+    } else if (param === "3") {
+        corporalidadC.forEach(obj => {
+            corpo.push(obj);
+        });
+    } else if (param === "4") {
+        corporalidadR.forEach(obj => {
+            corpo.push(obj);
+        });
+    }
     return corpo;
 }
 
 const LoadCreat = (param) => {
     let creat = [];
-    if (param === "1") {} else if (param === "2") {
+    if (param === "1") {
+        creatividadM.forEach(obj => {
+            creat.push(obj);
+        });
+    } else if (param === "2") {
         creatividadU.forEach(obj => {
             creat.push(obj);
         });
-    } else if (param === "3") {} else if (param === "4") {} else {}
+    } else if (param === "3") {
+        creatividadC.forEach(obj => {
+            creat.push(obj);
+        });
+    } else if (param === "4") {
+        creatividadR.forEach(obj => {
+            creat.push(obj);
+        });
+    }
     return creat;
 }
 
 const LoadSocia = (param) => {
     let socia = [];
-    if (param === "1") {} else if (param === "2") {
+    if (param === "1") {
+        sociabilidadM.forEach(obj => {
+            socia.push(obj);
+        });
+    } else if (param === "2") {
         sociabilidadU.forEach(obj => {
             socia.push(obj);
         });
-    } else if (param === "3") {} else if (param === "4") {} else {}
+    } else if (param === "3") {
+        sociabilidadC.forEach(obj => {
+            socia.push(obj);
+        });
+    } else if (param === "4") {
+        sociabilidadR.forEach(obj => {
+            socia.push(obj);
+        });
+    }
     return socia;
 }
 
