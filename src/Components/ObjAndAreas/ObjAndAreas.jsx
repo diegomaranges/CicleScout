@@ -6,7 +6,6 @@ import Filter from "./Filter/Filter";
 export default function ObjAndAreas(params) {
     const [seccion, setSeccion] = useState(0);
     const [religiones, setReligiones] = useState([]);
-
     
     const saveReligions = index => {
         let i = religiones.indexOf(index);

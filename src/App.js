@@ -11,7 +11,7 @@ function App() {
     console.error('Something bad happened.');*/
     return (
         <BrowserRouter>
-            <div className="container">
+            <div className="container-xxl">
                 <Header></Header>
                     <Routes>
                         <Route path="/objetives" element={<ObjAndAreas />}></Route>
