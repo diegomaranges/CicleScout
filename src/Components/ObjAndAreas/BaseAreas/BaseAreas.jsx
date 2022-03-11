@@ -1,32 +1,13 @@
 import React from "react";
-import reactDom from "react-dom";
 import { useDispatch } from 'react-redux';
 
-import {addElem, cleanElems, deleteElem} from "../../../actions";
 import { LoadSections } from "./Utils";
 
 import "./BaseAreas.css";
 
-export default function BaseAreas(params) {
+export default function BaseAreas(prop) {
     const dispatch = useDispatch();
     let obj = {};
-
-    function hundleObjClick(area, index, obj) {
-        let domElem = reactDom.findDOMNode(document.getElementById(area + index));
-        domElem
-            .classList
-            .toggle("check");
-        if (domElem.classList.contains("check")) {
-            let element = {
-                id: area + index,
-                area: area,
-                obj: obj
-            }
-            dispatch(addElem(element))
-        } else {
-            dispatch(deleteElem(area + index))
-        }
-    }
 
     const loadAreasRow = () => {
         return (
@@ -53,19 +34,19 @@ export default function BaseAreas(params) {
                             scope="row"
                             className="text-center">{e + 1}</th>
                         <th className="fit text-center" key={"afect" + e}>
-                            <button id={"afect" + e} onClick={() => hundleObjClick("afect", e, obj.afect[e])}>{obj.afect[e]}</button>
+                            <button id={"afect" + e} onClick={() => prop.onClick("afect", e, obj.afect[e])}>{obj.afect[e]}</button>
                         </th>
                         <th className="fit text-center" key={"carac" + e}>
-                            <button id={"carac" + e} onClick={() => hundleObjClick("carac", e, obj.carac[e])}>{obj.carac[e]}</button>
+                            <button id={"carac" + e} onClick={() => prop.onClick("carac", e, obj.carac[e])}>{obj.carac[e]}</button>
                         </th>
                         <th className="fit text-center" key={"corpo" + e}>
-                            <button id={"corpo" + e} onClick={() => hundleObjClick("corpo", e, obj.corpo[e])}>{obj.corpo[e]}</button>
+                            <button id={"corpo" + e} onClick={() => prop.onClick("corpo", e, obj.corpo[e])}>{obj.corpo[e]}</button>
                         </th>
                         <th className="fit text-center" key={"creat" + e}>
-                            <button id={"creat" + e} onClick={() => hundleObjClick("creat", e, obj.creat[e])}>{obj.creat[e]}</button>
+                            <button id={"creat" + e} onClick={() => prop.onClick("creat", e, obj.creat[e])}>{obj.creat[e]}</button>
                         </th>
                         <th className="fit text-center" key={"socia" + e}>
-                            <button id={"socia" + e} onClick={() => hundleObjClick("socia", e, obj.socia[e])}>{obj.socia[e]}</button>
+                            <button id={"socia" + e} onClick={() => prop.onClick("socia", e, obj.socia[e])}>{obj.socia[e]}</button>
                         </th>
                     </tr>);
                 })
@@ -74,26 +55,22 @@ export default function BaseAreas(params) {
     }
 
     const loadTable = () => {
-        dispatch(cleanElems())
-        if (params.sec && params.sec !== 0) {
-            obj = LoadSections(params.sec);
-            return (
-                <table className="table table-success table-striped">
-                    <thead>
-                        {loadAreasRow()}
-                    </thead>
-                    <tbody>
-                        {loadDocRows()}
-                    </tbody>
-                </table>
-            )
-        } else {
-            return <div></div>
-        }
+        obj = LoadSections(prop.sec);
+        return (
+            <table className="table table-success table-striped">
+                <thead>
+                    {loadAreasRow()}
+                </thead>
+                <tbody>
+                    {loadDocRows()}
+                </tbody>
+            </table>
+        )
     }
 
     return (
-    <>
-        <div id="objetives">{loadTable()}</div>
-    </>)
+        <>
+            <div>{loadTable()}</div>
+        </>
+    )
 }
