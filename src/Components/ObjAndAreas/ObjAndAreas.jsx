@@ -1,15 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import reactDom from "react-dom";
+import { useDispatch } from "react-redux";
 
 import BaseAreas from "./BaseAreas/BaseAreas";
 import EspArea from "./EspArea/EspArea";
-import Filter from "./Filter/Filter";
 
-import { addElem, deleteElem } from "../../../actions";
+import { addElem, deleteElem } from "../../actions";
 
 export default function ObjAndAreas(params) {
-    const [seccion, setSeccion] = useState(0);
-    const [religiones, setReligiones] = useState([]);
+    const dispatch = useDispatch();
+    //const [seccion, setSeccion] = useState(0);
+    //const [religiones, setReligiones] = useState([]);
 
     function hundleObjClick(area, index, obj) {
         let domElem = reactDom.findDOMNode(document.getElementById(area + index));
@@ -28,7 +29,7 @@ export default function ObjAndAreas(params) {
         }
     }
     
-    const saveReligions = index => {
+    /*const saveReligions = index => {
         let i = religiones.indexOf(index);
 
         if (i < 0) {
@@ -36,13 +37,12 @@ export default function ObjAndAreas(params) {
         } else {
             setReligiones(religiones.filter(item => item !== index));
         }
-    }
+    }*/
 
     return(
         <>
-            <Filter sec={setSeccion} sRel={saveReligions} onClick={hundleObjClick}></Filter>
-            <BaseAreas sec={seccion}></BaseAreas>
-            <EspArea sec={seccion} rel={religiones}></EspArea>
+            <BaseAreas sec={"1"} onClick={hundleObjClick}></BaseAreas>
+            <EspArea sec={"1"} rel={[1, 0]} onClick={hundleObjClick}></EspArea>
         </>
     )
 }

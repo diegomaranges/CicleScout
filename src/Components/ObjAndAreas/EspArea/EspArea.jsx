@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import reactDom from "react-dom";
+import React from "react";
 
 import { loadBu, loadCE, loadCa, loadJu, loadMu, loadSa } from "./Utils";
 
@@ -13,7 +12,7 @@ export default function EspArea(prop) {
                 return (
                     <table className="table table-success table-striped">
                         <tbody>
-                            <tr id="UBu" className="d-none">{loadBu()}</tr>
+                            <tr id="UBu">{loadBu(prop.sec, prop.onClick)}</tr>
                         </tbody>
                     </table>
                 );
@@ -21,7 +20,7 @@ export default function EspArea(prop) {
                 return (
                     <table className="table table-success table-striped">
                         <tbody>
-                            <tr id="UCE" className="d-none">{loadCE()}</tr>
+                            <tr id="UCE">{loadCE(prop.sec, prop.onClick)}</tr>
                         </tbody>
                     </table>
                 );
@@ -29,7 +28,7 @@ export default function EspArea(prop) {
                 return (
                     <table className="table table-success table-striped">
                         <tbody>
-                            <tr id="UCa" className="d-none">{loadCa()}</tr>
+                            <tr id="UCa">{loadCa(prop.sec, prop.onClick)}</tr>
                         </tbody>
                     </table>
                 );
@@ -37,7 +36,7 @@ export default function EspArea(prop) {
                 return (
                     <table className="table table-success table-striped">
                         <tbody>
-                            <tr id="UJu" className="d-none">{loadJu()}</tr>
+                            <tr id="UJu">{loadJu(prop.sec, prop.onClick)}</tr>
                         </tbody>
                     </table>
                 );
@@ -45,7 +44,7 @@ export default function EspArea(prop) {
                 return (
                     <table className="table table-success table-striped">
                         <tbody>
-                            <tr id="USa" className="d-none">{loadSa()}</tr>
+                            <tr id="USa">{loadSa(prop.sec, prop.onClick)}</tr>
                         </tbody>
                     </table>
                 );
@@ -53,7 +52,7 @@ export default function EspArea(prop) {
                 return (
                     <table className="table table-success table-striped">
                         <tbody>
-                            <tr id="UMu" className="d-none">{loadMu()}</tr>
+                            <tr id="UMu">{loadMu(prop.sec, prop.onClick)}</tr>
                         </tbody>
                     </table>
                 );
@@ -63,21 +62,24 @@ export default function EspArea(prop) {
     }
 
     const loadTable = () => {
-        const bu = prop.rel.find(elem => { elem === 0 })
-        const ce = prop.rel.find(elem => { elem === 1 })
-        const ca = prop.rel.find(elem => { elem === 2 })
-        const ju = prop.rel.find(elem => { elem === 3 })
-        const sa = prop.rel.find(elem => { elem === 4 })
-        const mu = prop.rel.find(elem => { elem === 5 })
+        let rel = [];
+        rel = prop.rel;
+
+        const bu = rel.findIndex(elem => elem === 0);
+        const ce = rel.findIndex(elem => elem === 1);
+        const ca = rel.findIndex(elem => elem === 2);
+        const ju = rel.findIndex(elem => elem === 3);
+        const sa = rel.findIndex(elem => elem === 4);
+        const mu = rel.findIndex(elem => elem === 5);
 
         return (
             <>
-                { bu ? loadObj(0) : <></> }
-                { ce ? loadObj(1) : <></> }
-                { ca ? loadObj(2) : <></> }
-                { ju ? loadObj(3) : <></> }
-                { sa ? loadObj(4) : <></> }
-                { mu ? loadObj(5) : <></> }
+                { bu + 1 ? loadObj(0) : <></> }
+                { ce + 1 ? loadObj(1) : <></> }
+                { ca + 1 ? loadObj(2) : <></> }
+                { ju + 1 ? loadObj(3) : <></> }
+                { sa + 1 ? loadObj(4) : <></> }
+                { mu + 1 ? loadObj(5) : <></> }
             </>
         );
     }

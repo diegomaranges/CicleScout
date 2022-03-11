@@ -1,12 +1,10 @@
 import React from "react";
-import { useDispatch } from 'react-redux';
 
 import { LoadSections } from "./Utils";
 
 import "./BaseAreas.css";
 
 export default function BaseAreas(prop) {
-    const dispatch = useDispatch();
     let obj = {};
 
     const loadAreasRow = () => {

@@ -1,11 +1,11 @@
 import { espiritualidadC, espiritualidadM, espiritualidadR, espiritualidadU } from "../../../Backend/Backend";
 
-export const loadBu = section => {
+export const loadBu = (section, onClick) => {
     if (section === "1") {
         return (
             <>
                 {espiritualidadM.Budistas.map((e, i) => {
-                    return i > 0 ? (<th className="fit text-center" key={"uBu" + i}>{e}</th>) : (<th scope="row" className="text-center" key={"uBu" + i}>{espiritualidadU.Budistas[0]}</th>)
+                    return i > 0 ? (<th className="fit text-center" key={"espBu" + i}><button id={"espBu" + i} onClick={() => onClick("espBu", i, e)}>{e}</button></th>) : (<th scope="row" className="text-center" key={"espBu" + i}>{e}</th>)
                 })}
             </>
         )
@@ -13,7 +13,7 @@ export const loadBu = section => {
         return (
             <>
                 {espiritualidadU.Budistas.map((e, i) => {
-                    return i > 0 ? (<th className="fit text-center" key={"uBu" + i}>{e}</th>) : (<th scope="row" className="text-center" key={"uBu" + i}>{espiritualidadU.Budistas[0]}</th>)
+                    return i > 0 ? (<th className="fit text-center" key={"espBu" + i}><button id={"espBu" + i} onClick={() => onClick("espBu", i, e)}>{e}</button></th>) : (<th scope="row" className="text-center" key={"espBu" + i}>{e}</th>)
                 })}
             </>
         )
@@ -21,27 +21,27 @@ export const loadBu = section => {
         return (
             <>
                 {espiritualidadC.Budistas.map((e, i) => {
-                    return i > 0 ? (<th className="fit text-center" key={"uBu" + i}>{e}</th>) : (<th scope="row" className="text-center" key={"uBu" + i}>{espiritualidadU.Budistas[0]}</th>)
+                    return i > 0 ? (<th className="fit text-center" key={"espBu" + i}><button id={"espBu" + i} onClick={() => onClick("espBu", i, e)}>{e}</button></th>) : (<th scope="row" className="text-center" key={"espBu" + i}>{e}</th>)
                 })}
             </>
         )
     } else if (section === "4") {
         return (
             <>
-                {espiritualidadC.Budistas.map((e, i) => {
-                    return i > 0 ? (<th className="fit text-center" key={"uBu" + i}>{e}</th>) : (<th scope="row" className="text-center" key={"uBu" + i}>{espiritualidadU.Budistas[0]}</th>)
+                {espiritualidadR.Budistas.map((e, i) => {
+                    return i > 0 ? (<th className="fit text-center" key={"espBu" + i}><button id={"espBu" + i} onClick={() => onClick("espBu", i, e)}>{e}</button></th>) : (<th scope="row" className="text-center" key={"espBu" + i}>{e}</th>)
                 })}
             </>
         )
     }
 }
 
-export const loadCa = section => {
+export const loadCa = (section, onClick) => {
     if (section === "1") {
         return (
             <>
                 {espiritualidadM.Catolicos.map((e, i) => {
-                    return i > 0 ? (<th className="fit text-center" key={"uCa" + i}>{e}</th>) : (<th scope="row" className="text-center" key={"uCa" + i}>{espiritualidadU.Catolicos[0]}</th>)
+                    return i > 0 ? (<th className="fit text-center" key={"espCa" + i}><button id={"espCa" + i} onClick={() => onClick("espCa", i, e)}>{e}</button></th>) : (<th scope="row" className="text-center" key={"espCa" + i}>{e}</th>)
                 })}
             </>
         )
@@ -50,7 +50,7 @@ export const loadCa = section => {
         return (
             <>
                 {espiritualidadU.Catolicos.map((e, i) => {
-                    return i > 0 ? (<th className="fit text-center" key={"uCa" + i}>{e}</th>) : (<th scope="row" className="text-center" key={"uCa" + i}>{espiritualidadU.Catolicos[0]}</th>)
+                    return i > 0 ? (<th className="fit text-center" key={"espCa" + i}><button id={"espCa" + i} onClick={() => onClick("espCa", i, e)}>{e}</button></th>) : (<th scope="row" className="text-center" key={"espCa" + i}>{e}</th>)
                 })}
             </>
         )
@@ -58,7 +58,7 @@ export const loadCa = section => {
         return (
             <>
                 {espiritualidadC.Catolicos.map((e, i) => {
-                    return i > 0 ? (<th className="fit text-center" key={"uCa" + i}>{e}</th>) : (<th scope="row" className="text-center" key={"uCa" + i}>{espiritualidadU.Catolicos[0]}</th>)
+                    return i > 0 ? (<th className="fit text-center" key={"espCa" + i}><button id={"espCa" + i} onClick={() => onClick("espCa", i, e)}>{e}</button></th>) : (<th scope="row" className="text-center" key={"espCa" + i}>{e}</th>)
                 })}
             </>
         )
@@ -66,19 +66,19 @@ export const loadCa = section => {
         return (
             <>
                 {espiritualidadR.Catolicos.map((e, i) => {
-                    return i > 0 ? (<th className="fit text-center" key={"uCa" + i}>{e}</th>) : (<th scope="row" className="text-center" key={"uCa" + i}>{espiritualidadU.Catolicos[0]}</th>)
+                    return i > 0 ? (<th className="fit text-center" key={"espCa" + i}><button id={"espCa" + i} onClick={() => onClick("espCa", i, e)}>{e}</button></th>) : (<th scope="row" className="text-center" key={"espCa" + i}>{e}</th>)
                 })}
             </>
         )
     }
 }
 
-export const loadCE = section => {
+export const loadCE = (section, onClick) => {
     if (section === "1") {
         return (
             <>
                 {espiritualidadM.CristianosEvangelicos.map((e, i) => {
-                    return i > 0 ? (<th className="fit text-center" key={"uCE" + i}>{e}</th>) : (<th scope="row" className="text-center" key={"uCE" + i}>{espiritualidadU.CristianosEvangelicos[0]}</th>)
+                    return i > 0 ? (<th className="fit text-center" key={"espCe" + i}><button id={"espCe" + i} onClick={() => onClick("espCe", i, e)}>{e}</button></th>) : (<th scope="row" className="text-center" key={"espCe" + i}>{e}</th>)
                 })}
             </>
         )
@@ -86,7 +86,7 @@ export const loadCE = section => {
         return (
             <>
                 {espiritualidadU.CristianosEvangelicos.map((e, i) => {
-                    return i > 0 ? (<th className="fit text-center" key={"uCE" + i}>{e}</th>) : (<th scope="row" className="text-center" key={"uCE" + i}>{espiritualidadU.CristianosEvangelicos[0]}</th>)
+                    return i > 0 ? (<th className="fit text-center" key={"espCe" + i}><button id={"espCe" + i} onClick={() => onClick("espCe", i, e)}>{e}</button></th>) : (<th scope="row" className="text-center" key={"espCe" + i}>{e}</th>)
                 })}
             </>
         )
@@ -94,7 +94,7 @@ export const loadCE = section => {
         return (
             <>
                 {espiritualidadC.CristianosEvangelicos.map((e, i) => {
-                    return i > 0 ? (<th className="fit text-center" key={"uCE" + i}>{e}</th>) : (<th scope="row" className="text-center" key={"uCE" + i}>{espiritualidadU.CristianosEvangelicos[0]}</th>)
+                    return i > 0 ? (<th className="fit text-center" key={"espCe" + i}><button id={"espCe" + i} onClick={() => onClick("espCe", i, e)}>{e}</button></th>) : (<th scope="row" className="text-center" key={"espCe" + i}>{e}</th>)
                 })}
             </>
         )
@@ -102,19 +102,19 @@ export const loadCE = section => {
         return (
             <>
                 {espiritualidadR.CristianosEvangelicos.map((e, i) => {
-                    return i > 0 ? (<th className="fit text-center" key={"uCE" + i}>{e}</th>) : (<th scope="row" className="text-center" key={"uCE" + i}>{espiritualidadU.CristianosEvangelicos[0]}</th>)
+                    return i > 0 ? (<th className="fit text-center" key={"espCe" + i}><button id={"espCe" + i} onClick={() => onClick("espCe", i, e)}>{e}</button></th>) : (<th scope="row" className="text-center" key={"espCe" + i}>{e}</th>)
                 })}
             </>
         )
     }
 }
 
-export const loadJu = section => {
+export const loadJu = (section, onClick) => {
     if (section === "1") {
         return (
             <>
                 {espiritualidadM.Judios.map((e, i) => {
-                    return i > 0 ? (<th className="fit text-center" key={"uJu" + i}>{e}</th>) : (<th scope="row" className="text-center" key={"uJu" + i}>{espiritualidadU.Judios[0]}</th>)
+                    return i > 0 ? (<th className="fit text-center" key={"espJu" + i}><button id={"espJu" + i} onClick={() => onClick("espJu", i, e)}>{e}</button></th>) : (<th scope="row" className="text-center" key={"espJu" + i}>{e}</th>)
                 })}
             </>
         )
@@ -122,7 +122,7 @@ export const loadJu = section => {
         return (
             <>
                 {espiritualidadU.Judios.map((e, i) => {
-                    return i > 0 ? (<th className="fit text-center" key={"uJu" + i}>{e}</th>) : (<th scope="row" className="text-center" key={"uJu" + i}>{espiritualidadU.Judios[0]}</th>)
+                    return i > 0 ? (<th className="fit text-center" key={"espJu" + i}><button id={"espJu" + i} onClick={() => onClick("espJu", i, e)}>{e}</button></th>) : (<th scope="row" className="text-center" key={"espJu" + i}>{e}</th>)
                 })}
             </>
         )
@@ -130,7 +130,7 @@ export const loadJu = section => {
         return (
             <>
                 {espiritualidadC.Judios.map((e, i) => {
-                    return i > 0 ? (<th className="fit text-center" key={"uJu" + i}>{e}</th>) : (<th scope="row" className="text-center" key={"uJu" + i}>{espiritualidadU.Judios[0]}</th>)
+                    return i > 0 ? (<th className="fit text-center" key={"espJu" + i}><button id={"espJu" + i} onClick={() => onClick("espJu", i, e)}>{e}</button></th>) : (<th scope="row" className="text-center" key={"espJu" + i}>{e}</th>)
                 })}
             </>
         )
@@ -138,19 +138,19 @@ export const loadJu = section => {
         return (
             <>
                 {espiritualidadR.Judios.map((e, i) => {
-                    return i > 0 ? (<th className="fit text-center" key={"uJu" + i}>{e}</th>) : (<th scope="row" className="text-center" key={"uJu" + i}>{espiritualidadU.Judios[0]}</th>)
+                    return i > 0 ? (<th className="fit text-center" key={"espJu" + i}><button id={"espJu" + i} onClick={() => onClick("espJu", i, e)}>{e}</button></th>) : (<th scope="row" className="text-center" key={"espJu" + i}>{e}</th>)
                 })}
             </>
         )
     }
 }
 
-export const loadSa = section => {
+export const loadSa = (section, onClick) => {
     if (section === "1") {
         return (
             <>
                 {espiritualidadM.SantosDeLosUltimosDias.map((e, i) => {
-                    return i > 0 ? (<th className="fit text-center" key={"uSa" + i}>{e}</th>) : (<th scope="row" className="text-center" key={"uSa" + i}>{espiritualidadU.SantosDeLosUltimosDias[0]}</th>)
+                    return i > 0 ? (<th className="fit text-center" key={"espSa" + i}><button id={"espSa" + i} onClick={() => onClick("espSa", i, e)}>{e}</button></th>) : (<th scope="row" className="text-center" key={"espSa" + i}>{e}</th>)
                 })}
             </>
         )
@@ -158,7 +158,7 @@ export const loadSa = section => {
         return (
             <>
                 {espiritualidadU.SantosDeLosUltimosDias.map((e, i) => {
-                    return i > 0 ? (<th className="fit text-center" key={"uSa" + i}>{e}</th>) : (<th scope="row" className="text-center" key={"uSa" + i}>{espiritualidadU.SantosDeLosUltimosDias[0]}</th>)
+                    return i > 0 ? (<th className="fit text-center" key={"espSa" + i}><button id={"espSa" + i} onClick={() => onClick("espSa", i, e)}>{e}</button></th>) : (<th scope="row" className="text-center" key={"espSa" + i}>{e}</th>)
                 })}
             </>
         )
@@ -166,7 +166,7 @@ export const loadSa = section => {
         return (
             <>
                 {espiritualidadC.SantosDeLosUltimosDias.map((e, i) => {
-                    return i > 0 ? (<th className="fit text-center" key={"uSa" + i}>{e}</th>) : (<th scope="row" className="text-center" key={"uSa" + i}>{espiritualidadU.SantosDeLosUltimosDias[0]}</th>)
+                    return i > 0 ? (<th className="fit text-center" key={"espSa" + i}><button id={"espSa" + i} onClick={() => onClick("espSa", i, e)}>{e}</button></th>) : (<th scope="row" className="text-center" key={"espSa" + i}>{e}</th>)
                 })}
             </>
         )
@@ -174,19 +174,19 @@ export const loadSa = section => {
         return (
             <>
                 {espiritualidadR.SantosDeLosUltimosDias.map((e, i) => {
-                    return i > 0 ? (<th className="fit text-center" key={"uSa" + i}>{e}</th>) : (<th scope="row" className="text-center" key={"uSa" + i}>{espiritualidadU.SantosDeLosUltimosDias[0]}</th>)
+                    return i > 0 ? (<th className="fit text-center" key={"espSa" + i}><button id={"espSa" + i} onClick={() => onClick("espSa", i, e)}>{e}</button></th>) : (<th scope="row" className="text-center" key={"espSa" + i}>{e}</th>)
                 })}
             </>
         )
     }
 }
 
-export const loadMu = section => {
+export const loadMu = (section, onClick) => {
     if (section === "1") {
         return (
             <>
                 {espiritualidadM.Musulmanes.map((e, i) => {
-                    return i > 0 ? (<th className="fit text-center" key={"uMu" + i}>{e}</th>) : (<th scope="row" className="text-center" key={"uMu" + i}>{espiritualidadU.Musulmanes[0]}</th>)
+                    return i > 0 ? (<th className="fit text-center" key={"espMu" + i}><button id={"espMu" + i} onClick={() => onClick("espMu", i, e)}>{e}</button></th>) : (<th scope="row" className="text-center" key={"espMu" + i}>{e}</th>)
                 })}
             </>
         )
@@ -194,7 +194,7 @@ export const loadMu = section => {
         return (
             <>
                 {espiritualidadU.Musulmanes.map((e, i) => {
-                    return i > 0 ? (<th className="fit text-center" key={"uMu" + i}>{e}</th>) : (<th scope="row" className="text-center" key={"uMu" + i}>{espiritualidadU.Musulmanes[0]}</th>)
+                    return i > 0 ? (<th className="fit text-center" key={"espMu" + i}><button id={"espMu" + i} onClick={() => onClick("espMu", i, e)}>{e}</button></th>) : (<th scope="row" className="text-center" key={"espMu" + i}>{e}</th>)
                 })}
             </>
         )
@@ -202,7 +202,7 @@ export const loadMu = section => {
         return (
             <>
                 {espiritualidadC.Musulmanes.map((e, i) => {
-                    return i > 0 ? (<th className="fit text-center" key={"uMu" + i}>{e}</th>) : (<th scope="row" className="text-center" key={"uMu" + i}>{espiritualidadU.Musulmanes[0]}</th>)
+                    return i > 0 ? (<th className="fit text-center" key={"espMu" + i}><button id={"espMu" + i} onClick={() => onClick("espMu", i, e)}>{e}</button></th>) : (<th scope="row" className="text-center" key={"espMu" + i}>{e}</th>)
                 })}
             </>
         )
@@ -210,7 +210,7 @@ export const loadMu = section => {
         return (
             <>
                 {espiritualidadR.Musulmanes.map((e, i) => {
-                    return i > 0 ? (<th className="fit text-center" key={"uMu" + i}>{e}</th>) : (<th scope="row" className="text-center" key={"uMu" + i}>{espiritualidadU.Musulmanes[0]}</th>)
+                    return i > 0 ? (<th className="fit text-center" key={"espMu" + i}><button id={"espMu" + i} onClick={() => onClick("espMu", i, e)}>{e}</button></th>) : (<th scope="row" className="text-center" key={"espMu" + i}>{e}</th>)
                 })}
             </>
         )
