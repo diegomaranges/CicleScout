@@ -5,12 +5,10 @@ import { useDispatch } from "react-redux";
 import BaseAreas from "./BaseAreas/BaseAreas";
 import EspArea from "./EspArea/EspArea";
 
-import { addElem, deleteElem } from "../../actions";
+import { addGoal, deleteGoal } from "../../actions";
 
-export default function ObjAndAreas(params) {
+export default function ObjAndAreas(prop) {
     const dispatch = useDispatch();
-    //const [seccion, setSeccion] = useState(0);
-    //const [religiones, setReligiones] = useState([]);
 
     function hundleObjClick(area, index, obj) {
         let domElem = reactDom.findDOMNode(document.getElementById(area + index));
@@ -23,9 +21,9 @@ export default function ObjAndAreas(params) {
                 area: area,
                 obj: obj
             }
-            dispatch(addElem(element))
+            dispatch(addGoal(element))
         } else {
-            dispatch(deleteElem(area + index))
+            dispatch(deleteGoal(area + index))
         }
     }
     
@@ -43,6 +41,7 @@ export default function ObjAndAreas(params) {
         <>
             <BaseAreas sec={"1"} onClick={hundleObjClick}></BaseAreas>
             <EspArea sec={"1"} rel={[1, 0]} onClick={hundleObjClick}></EspArea>
+            <button className="btn btn-primary mb-1 float-end" onClick={prop.hundleClick}>Guardar Objetivos y Areas</button>
         </>
     )
 }

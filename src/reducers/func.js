@@ -1,17 +1,33 @@
 const initialState = [];
 
-const change = (state = initialState, action) => {
+const arrayOfGoals = (state = initialState, action) => {
+    console.log(state);
     switch (action.type) {
-        case "ADD":
+        case "ADDG":
             return state.concat(action.element);
-        case "DELETE":
+        case "DELETEG":
             let index = state.findIndex(e => e.id === action.element)
             return state.length > 0 && index !== -1 ? state.filter(e => e.id !== action.element) : state;
-        case "CLEAR":
+        case "CLEARG":
             return [];
         default:
             return state;
     }
 }
 
-export default change;
+export const arrayOfActivities = (state = initialState, action) => {
+    console.log(state);
+    switch (action.type) {
+        case "ADDACT":
+            return state.concat(action.element);
+        case "DELETEACT":
+            let index = state.findIndex(e => e.id === action.element)
+            return state.length > 0 && index !== -1 ? state.filter(e => e.id !== action.element) : state;
+        case "CLEARACT":
+            return [];
+        default:
+            return state;
+    }
+}
+
+export default arrayOfGoals;

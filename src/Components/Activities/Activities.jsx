@@ -1,10 +1,14 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { cleanGoal } from "../../actions";
 
 export default function Activities(prop) {
     let navigate = useNavigate();
+    const dispatch = useDispatch();
 
     function SelecObjs(prop) {
+        dispatch(cleanGoal())
         navigate("/objetives");
     }
 

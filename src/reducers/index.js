@@ -1,6 +1,6 @@
-import change from './func'
+import arrayOfGoals, { arrayOfActivities } from './func'
 import { combineReducers } from 'redux';
 
-const rootReducer = combineReducers({ change });
+const rootReducer = combineReducers({ arrayOfGoals, arrayOfActivities });
 
 export default rootReducer;
