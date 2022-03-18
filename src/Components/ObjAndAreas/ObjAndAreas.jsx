@@ -10,7 +10,8 @@ import { addGoal, deleteGoal } from "../../actions";
 export default function ObjAndAreas(prop) {
     const dispatch = useDispatch();
 
-    function hundleObjClick(area, index, obj) {
+    function hundleObjClick(area, index, obj, event) {
+        event.preventDefault();
         let domElem = reactDom.findDOMNode(document.getElementById(area + index));
         domElem
             .classList
@@ -26,16 +27,6 @@ export default function ObjAndAreas(prop) {
             dispatch(deleteGoal(area + index))
         }
     }
-    
-    /*const saveReligions = index => {
-        let i = religiones.indexOf(index);
-
-        if (i < 0) {
-            setReligiones(religiones.concat(index));
-        } else {
-            setReligiones(religiones.filter(item => item !== index));
-        }
-    }*/
 
     return(
         <>

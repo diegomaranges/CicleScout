@@ -1,15 +1,22 @@
 import React from "react";
+import reactDom from "react-dom";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { cleanGoal } from "../../actions";
+
+//import { cleanGoal } from "../../actions";
+import ObjAndAreas from "../ObjAndAreas/ObjAndAreas";
 
 export default function Activities(prop) {
-    let navigate = useNavigate();
     const dispatch = useDispatch();
 
-    function SelecObjs(prop) {
-        dispatch(cleanGoal())
-        navigate("/objetives");
+    function tempFunc() {
+        return 0;
+    }
+
+    function SelecObjs(event) {
+        event.preventDefault();
+        //dispatch(cleanGoal());
+        const objDis = reactDom.findDOMNode(document.getElementById("objDisplay"));
+        objDis.classList.toggle("d-none");
     }
 
     return(
@@ -23,7 +30,11 @@ export default function Activities(prop) {
                     <span className="input-group-text" id="basic-addon1">Objetivos</span>
                     <input type="text" className="form-control" placeholder="Nombre de actividad" aria-label="Username" aria-describedby="basic-addon1"/>
                 </div>
-                <button onClick={() => SelecObjs()} className="btn btn-primary mb-3">Seleccionar objetivos educativos</button>
+                <button onClick={e => SelecObjs(e)} className="btn btn-primary mb-3">Seleccionar objetivos educativos</button>
+                <div id="objDisplay" className="d-none">
+                    <ObjAndAreas hundleClick={tempFunc}></ObjAndAreas>
+                </div>
+                <div id="selectObj"></div>
                 <div className="input-group mb-3">
                     <span className="input-group-text">Introduccion</span>
                     <textarea className="form-control" aria-label="With textarea"></textarea>
@@ -49,7 +60,10 @@ export default function Activities(prop) {
                     <span className="input-group-text">Iluminacion</span>
                     <textarea className="form-control" aria-label="With textarea"></textarea>
                 </div>
-                <button type="submit" className="btn btn-primary mb-3">Submit</button>
+                <div className="d-sm-flex flex-md-row bd-highlight justify-content-md-around align-items-md-center flex-wrap mb-1">
+                    <button type="submit" className="btn btn-primary mb-3" onClick={prop.save}>Guardar</button>
+                    <button type="submit" className="btn btn-primary mb-3" onClick={prop.cancel}>Cancelar</button>
+                </div>
             </form>
         </>
     );

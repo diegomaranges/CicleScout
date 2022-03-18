@@ -32,19 +32,19 @@ export default function BaseAreas(prop) {
                             scope="row"
                             className="text-center">{e + 1}</th>
                         <th className="fit text-center" key={"afect" + e}>
-                            <button id={"afect" + e} onClick={() => prop.onClick("afect", e, obj.afect[e])}>{obj.afect[e]}</button>
+                            <button id={"afect" + e} onClick={event => prop.onClick("afect", e, obj.afect[e], event)}>{obj.afect[e]}</button>
                         </th>
                         <th className="fit text-center" key={"carac" + e}>
-                            <button id={"carac" + e} onClick={() => prop.onClick("carac", e, obj.carac[e])}>{obj.carac[e]}</button>
+                            <button id={"carac" + e} onClick={event => prop.onClick("carac", e, obj.carac[e], event)}>{obj.carac[e]}</button>
                         </th>
                         <th className="fit text-center" key={"corpo" + e}>
-                            <button id={"corpo" + e} onClick={() => prop.onClick("corpo", e, obj.corpo[e])}>{obj.corpo[e]}</button>
+                            <button id={"corpo" + e} onClick={event => prop.onClick("corpo", e, obj.corpo[e], event)}>{obj.corpo[e]}</button>
                         </th>
                         <th className="fit text-center" key={"creat" + e}>
-                            <button id={"creat" + e} onClick={() => prop.onClick("creat", e, obj.creat[e])}>{obj.creat[e]}</button>
+                            <button id={"creat" + e} onClick={event => prop.onClick("creat", e, obj.creat[e], event)}>{obj.creat[e]}</button>
                         </th>
                         <th className="fit text-center" key={"socia" + e}>
-                            <button id={"socia" + e} onClick={() => prop.onClick("socia", e, obj.socia[e])}>{obj.socia[e]}</button>
+                            <button id={"socia" + e} onClick={event => prop.onClick("socia", e, obj.socia[e], event)}>{obj.socia[e]}</button>
                         </th>
                     </tr>);
                 })
