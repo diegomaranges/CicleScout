@@ -7,11 +7,7 @@ import ObjAndAreas from "../ObjAndAreas/ObjAndAreas";
 
 export default function Activities(prop) {
     const dispatch = useDispatch();
-
-    function tempFunc() {
-        return 0;
-    }
-
+    
     function SelecObjs(event) {
         event.preventDefault();
         //dispatch(cleanGoal());
@@ -32,7 +28,7 @@ export default function Activities(prop) {
                 </div>
                 <button onClick={e => SelecObjs(e)} className="btn btn-primary mb-3">Seleccionar objetivos educativos</button>
                 <div id="objDisplay" className="d-none">
-                    <ObjAndAreas hundleClick={tempFunc}></ObjAndAreas>
+                    <ObjAndAreas></ObjAndAreas>
                 </div>
                 <div id="selectObj"></div>
                 <div className="input-group mb-3">

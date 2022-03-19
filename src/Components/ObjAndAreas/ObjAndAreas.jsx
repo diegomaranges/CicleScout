@@ -32,7 +32,6 @@ export default function ObjAndAreas(prop) {
         <>
             <BaseAreas sec={"1"} onClick={hundleObjClick}></BaseAreas>
             <EspArea sec={"1"} rel={[1, 0]} onClick={hundleObjClick}></EspArea>
-            <button className="btn btn-primary mb-1 float-end" onClick={prop.hundleClick}>Guardar Objetivos y Areas</button>
         </>
     )
 }
